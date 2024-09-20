@@ -7,6 +7,7 @@
     2. e.g. 
         pdf2world ./source.pdf ./output.docs
 """
+import sys
 
 from pdfminer.pdfinterp import PDFResourceManager
 from pdfminer.pdfinterp import process_pdf
@@ -75,15 +76,17 @@ def pdf_to_world(world_file, pdf_file):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) <3:
-        print('args error , [0]py script, [1]pdf file path, [2]output world file path')
-    pdf_file = sys.args[1]
-    world_file = sys.args[2]
+    # if len(sys.argv) <3:
+    #     print('args error , [0]py script, [1]pdf file path, [2]output world file path')
+    # pdf_file = sys.args[1]
+    # world_file = sys.args[2]
+    pdf_file = "test1.pdf"
+    world_file = "output.docx"
     if pdf_file =='':
         print("no pdf paht")
-        return
+        # return
     if world_file =='':
         print("no world path")
-        return
+        # return
 
     pdf_to_world(world_file, pdf_file)
